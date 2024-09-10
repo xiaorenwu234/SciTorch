@@ -48,7 +48,11 @@
         </div>
         <div class="mb-2 border-t w-full"></div>
       </div>
-      <div class="bg-emerald-300">Main</div>
+      <div class="flex">
+        <div class="w-full">
+          <HomeView_MainFrame></HomeView_MainFrame>
+        </div>
+      </div>
       <div>Footer</div>
     </div>
   </div>
@@ -57,6 +61,7 @@
 <script setup>
 import {UserStore} from "@/stores/UserStore.js";
 import router from "@/router/index.js";
+import HomeView_MainFrame from "@/frames/HomeView_MainFrame.vue";
 
 const userStore = UserStore();
 
