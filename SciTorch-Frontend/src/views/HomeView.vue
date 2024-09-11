@@ -29,15 +29,15 @@
               </div>
 
               <div class="h-full flex">
-                <div class="m-auto">
+                <div class="m-auto" @click="GotoUserCenter">
                   <div class="m-auto flex">
                   <div class="mx-auto">
-                    <div class="rounded-full p-2 border flex hover:bg-gray-300/50 transition-colors duration-400" @click="GotoUserCenter">
+                    <div class="rounded-full p-2 border flex hover:bg-gray-300/50 transition-colors duration-400">
                       <img src="../components/icons/User_Icon.svg" class="aspect-square h-6" alt="用户头像">
                     </div>
                   </div>
                   </div>
-                  <div class="flex w-full mt-0.5">
+                  <div class="flex w-full mt-0.5 cursor-default">
                     <span class="text-sm mx-auto">{{userStore.Username}}</span>
                   </div>
                 </div>
