@@ -1,4 +1,5 @@
 <template>
+  <home-ad/>
   <div class="tabs">
     <div class="tab-header">
       <div class="w-[98%] md:w-[94%] lg:w-[90%] mx-auto flex">
@@ -38,6 +39,7 @@
 <script setup>
 import {ref} from 'vue';
 import Title_Frame from "@/frames/Title_Frame.vue";
+import HomeAd from "@/components/homeComponents/HomeAd.vue";
 
 // Tab 列表
 const tabs = [
