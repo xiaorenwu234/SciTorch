@@ -28,6 +28,11 @@ const router = createRouter({
       path:'/forget-password',
         name:'forget-password',
         component:()=>import('../views/ForgetPasswordView.vue')
+    },
+    {
+      path:'/pdf-detail',
+      name:'pdf-detail',
+      component:()=>import('../views/PdfDetailView.vue')
     }
   ]
 })
