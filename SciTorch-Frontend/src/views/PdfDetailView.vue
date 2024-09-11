@@ -101,7 +101,7 @@ const Articles = [
                   <div
                       class="absolute inset-0 bg-transparent hover:bg-blue-800/90 z-20 flex items-center justify-center">
                     <span
-                        class="text-white opacity-100 hover:opacity-1 transition-opacity duration-300 text-xl text-bold underline">Download PDF</span>
+                        class="text-white opacity-100 hover:opacity-1 transition-opacity duration-300 text-xl text-bold underline cursor-pointer">Download PDF</span>
                   </div>
                   <img src="/Discourse_Image.png" alt="论文封面" class="aspect-auto bg-white relative z-10">
                 </div>
