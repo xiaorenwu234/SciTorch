@@ -32,7 +32,7 @@
                 <div class="m-auto">
                   <div class="m-auto flex">
                   <div class="mx-auto">
-                    <div class="rounded-full p-2 border flex hover:bg-gray-300/50 transition-colors duration-400" @click="GotoUserCenter">
+                    <div class="rounded-full p-2 border flex hover:bg-gray-300/50 transition-colors duration-400 cursor-pointer" @click="GotoUserCenter">
                       <img src="../components/icons/User_Icon.svg" class="aspect-square h-6" alt="用户头像">
                     </div>
                   </div>
@@ -53,7 +53,9 @@
           <HomeView_MainFrame></HomeView_MainFrame>
         </div>
       </div>
-      <div>Footer</div>
+      <div style="background: #f0f0f0">
+        <HomeView_Footer></HomeView_Footer>
+      </div>
     </div>
   </div>
 </template>
@@ -62,14 +64,14 @@
 import {UserStore} from "@/stores/UserStore.js";
 import router from "@/router/index.js";
 import HomeView_MainFrame from "@/frames/HomeView_MainFrame.vue";
+import HomeView_Footer from "@/components/HomeComponents/HomeView_Footer.vue";
 
 const userStore = UserStore();
 
-const GotoUserCenter=()=>{
-  if(userStore.HasLogin){
+const GotoUserCenter=()=> {
+  if (userStore.HasLogin) {
     router.push('/user-center')
-  }
-  else{
+  } else {
     router.push('/login')
   }
 }
