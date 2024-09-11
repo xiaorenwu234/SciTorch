@@ -88,7 +88,7 @@ const startCountdown = () => {
 
 <template>
   <div class="w-screen h-screen flex login-background">
-    <div class="form m-auto border">
+    <div class="form m-auto border shadow-lg">
       <div class="w-full flex">
         <div class="text-2xl font-bold mb-2 text-[#1e0e4b] text-center mx-auto">欢迎来到 <span
             class="bg-gradient-to-r from-[#00f6f7]  to-[#A349A4] bg-clip-text text-transparent">SciTorch</span></div>
