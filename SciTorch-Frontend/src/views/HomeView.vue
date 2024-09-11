@@ -5,7 +5,7 @@
         <div class="w-full flex flex-row">
           <div class="h-20 w-[98%] md:w-[94%] lg:w-[90%] mx-auto">
             <div class="h-full flex w-full flex-row">
-              <div class="text-3xl my-auto font-bold text-gray-700 tracking-wide">SciTorch</div>
+              <div class="text-3xl my-auto font-bold text-gray-700 tracking-wide use_font">SciTorch</div>
               <div class="flex-1 flex">
                 <div class="flex items-center m-auto w-[70%]">
                   <div class="rounded-lg w-full">

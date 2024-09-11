@@ -20,10 +20,6 @@
   opacity: 0;
 }
 
-#app{
-  font-family: 'TsangerYuYangT_W03_W03', sans-serif;
-}
-
 .use_font {
   font-family: 'TsangerYuYangT_W03_W03',sans-serif;
 }
