@@ -12,8 +12,8 @@ const navigateToService = () => {
 </script>
 
 <template>
-  <div v-if="needFullAccess" class="my-5 w-full h-[270px] flex cursor-pointer" @click="navigateToService">
-    <div class="w-[98%] md:w-[94%] lg:w-[90%] flex border rounded-md shadow-sm flex-col mx-auto justify-center pl-8 ad-background">
+  <div v-if="needFullAccess" class="my-5 w-full h-[270px] flex">
+    <div class="w-[98%] md:w-[94%] lg:w-[90%] flex border rounded-md shadow-sm flex-col mx-auto justify-center pl-8 ad-background cursor-pointer" @click="navigateToService">
       <div class="flex">
         <span class="mb-1.5 text-black" style="font-weight: 550;font-size:32px; line-height: 38px;">Advanced Search found</span>
         <span class="mb-1.5 text-blue-700 ml-2" style="font-weight: 550;font-size:32px; line-height: 38px;">9,465,672 Papers</span>

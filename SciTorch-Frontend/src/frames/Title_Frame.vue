@@ -1,5 +1,5 @@
 <script setup>
-import {ref} from 'vue';
+import {computed, ref} from 'vue';
 
 // 出版类型
 const selectedPublicationType = ref('all');
@@ -38,8 +38,18 @@ const Articles = [
 ]
 
 const Authors = [
-  {author: "Danu Danu", paperNumber: 100, viewNumber: 100, followerNumber: 100},
+  {author: "Danu Danu", paperNumber: 1, viewNumber: 17, followerNumber: 10},
 ]
+
+const enrichedArticles = computed(() => {
+  return Articles.map(article => {
+    const authorInfo = Authors.find(author => author.author === article.author) || {};
+    return {
+      ...article,
+      ...authorInfo
+    };
+  });
+});
 </script>
 
 <template>
@@ -128,7 +138,7 @@ const Authors = [
             <div class="tracking-wide text-black text-md" style="font-weight:600">SORT BY</div>
           </div>
         </div>
-        <div class="w-full mt-3 mb-8" v-for="(article,index) in Articles" :key="index">
+        <div class="w-full mt-3 mb-8" v-for="(article,index) in enrichedArticles" :key="index">
           <div class="text-blue-700 hover:text-blue-800 hover:underline cursor-pointer"
                style="font-size: 20px; line-height: 24px;">{{ article.title }}
           </div>
@@ -151,15 +161,15 @@ const Authors = [
                 <div class="h-12 flex ml-5">
                   <div class="flex-col mr-3">
                     <div>PAPERS</div>
-                    1
+                    {{ article.paperNumber }}
                   </div>
                   <div class="flex-col mr-3">
                     <div>VIEWS</div>
-                    0
+                    {{ article.viewNumber }}
                   </div>
                   <div class="flex-col">
                     <div>FOLLOWERS</div>
-                    10
+                    {{ article.followerNumber }}
                   </div>
                 </div>
               </div>
