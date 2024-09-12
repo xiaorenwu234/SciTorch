@@ -1,8 +1,18 @@
 <script setup>
 import {UserStore} from "@/stores/UserStore.js";
-import HomeView_Footer from "@/components/HomeComponents/SearchView_Footer.vue";
+import HomeView_Footer from "@/components/SearchComponents/SearchView_Footer.vue";
+import router from "@/router/index.js";
+import {ref} from "vue";
 
 const userStore = UserStore();
+const searchMsg = ref("")
+
+const AuthorFound = [
+  {name: "Danu-Danu", avatar: null, corp: "Beihang"},
+  {name: "Danu-Danu", avatar: null, corp: "Beihang"},
+  {name: "Danu-Danu", avatar: null, corp: "Beihang"},
+  {name: "Danu-Danu", avatar: null, corp: "Beihang"},
+]
 </script>
 
 <template>
@@ -24,10 +34,38 @@ const userStore = UserStore();
                             d="M16.72 17.78a.75.75 0 1 0 1.06-1.06l-1.06 1.06ZM9 14.5A5.5 5.5 0 0 1 3.5 9H2a7 7 0 0 0 7 7v-1.5ZM3.5 9A5.5 5.5 0 0 1 9 3.5V2a7 7 0 0 0-7 7h1.5ZM9 3.5A5.5 5.5 0 0 1 14.5 9H16a7 7 0 0 0-7-7v1.5Zm3.89 10.45 3.83 3.83 1.06-1.06-3.83-3.83-1.06 1.06ZM14.5 9a5.48 5.48 0 0 1-1.61 3.89l1.06 1.06A6.98 6.98 0 0 0 16 9h-1.5Zm-1.61 3.89A5.48 5.48 0 0 1 9 14.5V16a6.98 6.98 0 0 0 4.95-2.05l-1.06-1.06Z"></path>
                       </svg>
                     </div>
-                    <input type="text" class="w-full bg-white pl-2 text-base font-semibold outline-0"
-                           placeholder="请输入搜索内容"
-                           id="">
-                    <input type="button" value="搜索"
+                    <el-dropdown trigger="click" placement="bottom">
+                      <input v-model="searchMsg" type="text" class="cursor-text w-full bg-white pl-2 text-base font-semibold outline-0"
+                             placeholder="请输入搜索内容"
+                      >
+                      <template #dropdown>
+                        <el-dropdown-menu v-if="searchMsg">
+                          <el-dropdown-item>
+                            <div class="flex items-center h-10">
+                              <img src="../components/icons/Email_Icon.svg" alt="邮箱" class="mr-5">
+                              <div class="flex-col">
+                                Papers matching "{{searchMsg}}"
+                              </div>
+                            </div>
+                          </el-dropdown-item>
+                          <el-dropdown-item v-for="(author,index) in AuthorFound" :key="index">
+                            <div class="flex items-center">
+                              <img src="../components/icons/User_Icon.svg" alt="邮箱" class="mr-5">
+                              <div class="flex-col">
+                                <div>{{ author.name }}</div>
+                                <div>{{ author.corp }}</div>
+                              </div>
+                            </div>
+                          </el-dropdown-item>
+                          <div
+                              class="cursor-pointer w-96 h-9 flex justify-center items-center
+                                      hover:text-blue-500 transition-colors">
+                            <div>VIEW ALL RESULTS</div>
+                          </div>
+                        </el-dropdown-menu>
+                      </template>
+                    </el-dropdown>
+                    <input type="button" value="搜索" @click="()=>{router.push('/search')}"
                            class="bg-blue-500 p-2 rounded-tr-lg rounded-br-lg text-white font-semibold hover:bg-blue-800 transition-colors w-[110px]">
                   </div>
                 </div>
@@ -41,7 +79,8 @@ const userStore = UserStore();
                     <div
                         class="rounded-full p-2 border flex hover:bg-gray-300/50 transition-colors duration-400 cursor-pointer"
                     >
-                      <img src="../components/icons/User_Icon.svg" class="aspect-square h-6" alt="用户头像">
+                      <img src="../components/icons/User_Icon.svg" class="aspect-square h-6"
+                           @click="()=>{router.push('/search')}" alt="用户头像">
                     </div>
                   </div>
                 </div>

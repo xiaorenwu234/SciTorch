@@ -39,7 +39,7 @@
 <script setup>
 import {ref} from 'vue';
 import Title_Frame from "@/frames/Title_Frame.vue";
-import HomeAd from "@/components/HomeComponents/SearchAd.vue";
+import HomeAd from "@/components/SearchComponents/SearchAd.vue";
 
 // Tab 列表
 const tabs = [
